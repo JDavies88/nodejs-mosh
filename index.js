@@ -9,8 +9,10 @@ const logger = require('./middleware/logger');
 const startupDebugger = require('debug')('app:startup');
 const dbDebugger = require('debug')('app:db');
 
+const movies = require('./routes/movies')
 const genres = require('./routes/genres')
 const customers = require('./routes/customers')
+const rentals = require('./routes/rentals')
 const home = require('./routes/home')
 
 const express = require('express');
@@ -35,8 +37,10 @@ dbDebugger('Connected to the database...')
 app.use(express.json());
 app.use(helmet());
 app.use(logger);
+app.use('/api/movies', movies);
 app.use('/api/genres', genres);
 app.use('/api/customers', customers);
+app.use('/api/rentals', rentals);
 app.use('/api', home);
 
 // CONFIGURATION

@@ -34,3 +34,4 @@ function validateCustomer(genre) {
 
 exports.Customer = Customer;
 exports.validate = validateCustomer;
+exports.customerSchema = customerSchema;
