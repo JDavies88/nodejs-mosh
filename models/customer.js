@@ -3,7 +3,7 @@ const Joi = require('joi');
 
 const customerSchema = new mongoose.Schema({
     isGold: {
-        typse: Boolean,
+        type: Boolean,
         default: false
     },
     name: {
